@@ -26,7 +26,5 @@ int main(){
     remover(&tarefas, tirar);
     imprimir(&tarefas);
 
-
-
     return 0;
 }
