@@ -41,3 +41,16 @@ void imprimir(TAD_lista* tarefas){
     }
 }
 
+void intercalar(TAD_lista* tarefas1, TAD_lista* tarefas2, TAD_lista* tarefas3, int cont){
+
+    for (int i = 0; i < cont; i++)
+    {
+        strcpy(tarefas3->vetor_T[tarefas3->fim].item, tarefas1->vetor_T[i].item);
+        tarefas3->fim++;
+        strcpy(tarefas3->vetor_T[tarefas3->fim].item, tarefas2->vetor_T[i].item);
+        tarefas3->fim++;
+    }
+
+}
+
+
