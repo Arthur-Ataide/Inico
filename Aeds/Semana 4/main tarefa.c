@@ -1,4 +1,4 @@
-#include "TAD Tarefa.c"
+#include "TAD Tarefa.h"
 
 int main(){
 

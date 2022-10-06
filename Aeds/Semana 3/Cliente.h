@@ -8,3 +8,5 @@ typedef struct {
 
 void iniciar_cliente(Cliente* pessoa, char* ende, char* nome, char* CPF);
 void saida(Cliente pessoa);
+void alocar(Cliente ** pessoas, Conta ** contas, int num, int cont);
+

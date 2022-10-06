@@ -25,5 +25,5 @@ void imprime(Conta conta){
     printf("Tipo = %s\n", conta.tipo);
     printf("Ano = %d\n", conta.ano);
     printf("Saldo = %.2lf\n", conta.saldo);
-    printf("Emprestimo = %s\n", conta.avaliacao);
+    printf("Emprestimo = %s\n\n\n\n", conta.avaliacao);
 }
