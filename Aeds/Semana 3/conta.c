@@ -3,6 +3,7 @@
 void inciacao(Conta* conta, char* tipo, int ano, double saldo){
     conta->ano = ano;
     strcpy(conta->tipo, tipo);
+    printf("%d", strlen(tipo));
     conta->saldo = saldo;
 }
 
