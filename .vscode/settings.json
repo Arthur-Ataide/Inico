@@ -2,6 +2,7 @@
     "editor.fontSize": 15,
     "files.associations": {
         "stdio.h": "c",
-        "stdlib.h": "c"
+        "stdlib.h": "c",
+        "tadcartas.h": "c"
     }
 }
