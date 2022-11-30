@@ -10,11 +10,14 @@ int main(){
     
     inicia(palavras);
 
-    int h = 6*3;
+    int h = 1;
     int i, j, n;
 
     printf("\nSem mexer:\n");
     imprime(palavras);
+
+    do h = h * 3 + 1; 
+    while (h < N);
 
     do {
        h = h/3;
