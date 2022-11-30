@@ -19,10 +19,6 @@ int main(){
         palavras[i] = aux;
     }
 
-    for(int i = 0; i < N; i++){
-        printf("%c%c ", palavras[i].ind, palavras[i].naipe);
-    }
-    printf("\n");
-
+    imprime(palavras);
     return 0;
 }

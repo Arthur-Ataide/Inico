@@ -10,3 +10,6 @@ typedef struct {
 } Titem;
 
 void inicia(Titem *palavras);
+void imprime(Titem *palavras);
+void insercao(Titem *palavras);
+void selecao(Titem * palavras);
