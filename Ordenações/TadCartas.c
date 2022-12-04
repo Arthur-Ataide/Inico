@@ -157,4 +157,3 @@ void Particao(int Esq, int Dir, int *i, int *j, Titem *palavras){
         
     }while (*i <= *j);
 }
-
