@@ -19,6 +19,8 @@ int main(){
         palavras[i] = aux;
     }
 
+    printf("\nApos o uso do selecao:\n");
+
     imprime(palavras);
     return 0;
 }

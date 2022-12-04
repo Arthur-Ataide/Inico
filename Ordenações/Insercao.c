@@ -22,6 +22,8 @@ int main(){
         }
         palavras[j + 1] = aux;
     }
+    
+    printf("\nApos o uso da insercao:\n");
 
     imprime(palavras);
 

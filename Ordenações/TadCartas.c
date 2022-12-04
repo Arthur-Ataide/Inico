@@ -38,7 +38,12 @@ void inicia(Titem *palavras){
             palavras[i].naipe = carta[1];
             palavras[i].ind = carta[0];
         }
-    }   
+    }
+
+    printf("\nAntes de ordernar:\n");
+
+    imprime(palavras);
+
 }
 
 void imprime(Titem *palavras){
@@ -86,3 +91,70 @@ void selecao(Titem * palavras){
         palavras[i] = aux;
     }
 }
+
+void Shellsort(Titem* palavras){
+    int h = 1;
+    int i, j;
+    Titem aux;
+
+    do h = (h * 3) + 1; 
+        while (h < N);
+
+        do {
+            h = h/3;
+            for(i = h; i < N; i++) {
+                aux = palavras[i];
+                j = i;
+            
+                while (palavras[j-h].num > aux.num)
+                {
+                    palavras[j] = palavras[j-h];
+                    j -= h;
+                    if (j<h) break;
+                }
+                palavras[j] = aux;
+            }
+        }
+        while (h != 1);
+}
+
+void QuickSort(Titem *palavara, int tam){
+    Ordena(0, tam-1, palavara);
+}
+
+void Ordena(int Esq, int Dir, Titem *palavras){
+    int i, j;
+
+    Particao(Esq, Dir, &i, &j, palavras);
+
+    if (Esq < j) 
+        Ordena(Esq, j, palavras);
+
+    if (i < Dir) 
+        Ordena(i, Dir, palavras);
+
+}
+
+void Particao(int Esq, int Dir, int *i, int *j, Titem *palavras){
+    
+    Titem pivo, aux;
+    *i = Esq;
+    *j = Dir;
+    pivo = palavras[(*i + *j)/2];
+
+    do{
+
+        while (pivo.num > palavras[*i].num) (*i)++;   //Qual do lado esquerdo ta errado
+
+        while (pivo.num < palavras[*j].num) (*j)--;   //Qual do lado direito ta errado
+        if (*i <= *j){
+            aux = palavras[*i];
+            palavras[*i] = palavras[*j];    //trocando os lugares que sao estao na posição errada
+            palavras[*j] = aux;
+            (*i)++;
+            (*j)--;
+        }
+        
+    }while (*i <= *j);
+}
+
