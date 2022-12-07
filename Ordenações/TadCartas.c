@@ -157,3 +157,51 @@ void Particao(int Esq, int Dir, int *i, int *j, Titem *palavras){
         
     }while (*i <= *j);
 }
+
+void HeapSort(Titem *palavras, int n){
+    int Esq, Dir;
+    Titem aux;
+    Constroi(palavras, n); /* constroi o heap */
+
+    Esq = 1; 
+    Dir = n;
+    printf("oi\n");
+    
+    imprime(palavras);
+    while (Dir > 1){ /* ordena o vetor */
+        aux = palavras[0];
+        palavras[0] = palavras[Dir-1];
+        palavras[Dir-1] = aux;
+        Dir--;
+        Refaz(Esq, Dir, palavras);
+        imprime(palavras);
+    }
+}
+
+void Constroi(Titem *palavras, int n){
+    int Esq;
+    Esq = (n) / 2;
+
+    while (Esq >= 1){
+        Refaz(Esq, n, palavras);
+        Esq--;
+    }
+}
+
+void Refaz(int Esq, int Dir, Titem *palavras){
+    int j = Esq * 2;
+    Titem aux = palavras[Esq-1];
+
+    while (j <= Dir){
+        if ((j < Dir) && (palavras[j-1].num < palavras[j].num)) j++;
+
+        if (aux.num >= palavras[j-1].num) break;
+
+        palavras[Esq-1] = palavras[j-1];
+        Esq = j;
+        j = Esq * 2 ;
+    }
+
+    palavras[Esq-1] = aux;
+    imprime(palavras);
+}
